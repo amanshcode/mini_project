@@ -1,0 +1,43 @@
+[
+  {
+    "id": "20261013230104490177",
+    "created_at": "2026-10-13T23:01:04",
+    "request": "Write a LinkedIn post showcasing my Python, machine learning, and LangGraph skills for AI/ML internship recruiters. Do not invent experience or achievements.",
+    "tone": "Professional and authentic",
+    "audience": "General LinkedIn audience",
+    "draft": "I’m a B.Tech student deeply focused on building practical AI/ML skills, and I’m actively looking for an internship where I can contribute and keep learning.\n\nOver the past year I’ve sharpened my Python programming foundation through coursework and personal study, tackling data‑cleaning pipelines, algorithm implementations, and automation scripts. To bridge theory and practice, I’ve completed several machine‑learning tutorials that cover supervised and unsupervised techniques—linear models, decision trees, clustering, and neural networks—using libraries such as scikit‑learn and PyTorch.\n\nMost recently, I’ve been exploring LangGraph, a framework for constructing composable LLM workflows. By connecting prompts, tools, and conditional logic, I’ve built simple prototypes that retrieve information, summarize text, and generate structured outputs. This hands‑on work has given me a clear view of how prompt engineering, tool integration, and modular design can accelerate real‑world AI solutions.\n\nI’m eager to bring this blend of Python proficiency, machine‑learning fundamentals, and LangGraph experimentation to a collaborative team. If your organization is looking for a motivated intern ready to dive into AI projects, I’d love to connect.",
+    "approved": true,
+    "attempts": 1,
+    "scorecard": {
+      "hook": 5,
+      "clarity": 8,
+      "audience_fit": 8,
+      "authenticity": 9,
+      "readability": 8,
+      "structure": 8,
+      "feedback": "Hook could be stronger; overall clear, relevant, and authentic. Good length and layout for LinkedIn.",
+      "verdict": "APPROVED"
+    },
+    "claim_checks": [
+      {
+        "claim": "Over the past year I’ve sharpened my Python programming foundation through coursework and personal study, tackling data‑cleaning pipelines, algorithm implementations, and automation scripts.",
+        "status": "USER-PROVIDED",
+        "explanation": "Self‑reported experience; not independently verified.",
+        "source_urls": []
+      },
+      {
+        "claim": "I’ve completed several machine‑learning tutorials that cover supervised and unsupervised techniques—linear models, decision trees, clustering, and neural networks—using libraries such as scikit‑learn and PyTorch.",
+        "status": "USER-PROVIDED",
+        "explanation": "Self‑reported experience; not independently verified.",
+        "source_urls": []
+      },
+      {
+        "claim": "I’ve been exploring LangGraph, a framework for constructing composable LLM workflows. By connecting prompts, tools, and conditional logic, I’ve built simple prototypes that retrieve information, summarize text, and generate structured outputs.",
+        "status": "USER-PROVIDED",
+        "explanation": "Self‑reported experience; not independently verified.",
+        "source_urls": []
+      }
+    ],
+    "review_feedback": "Strong, authentic content. Consider opening with a more attention‑grabbing hook (e.g., a brief achievement or a bold statement) to capture recruiters instantly. Keep the concise, results‑focused tone."
+  }
+]
