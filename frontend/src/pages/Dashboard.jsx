@@ -20,7 +20,7 @@ export default function Dashboard() {
   const [generationResult, setGenerationResult] = useState(null);
   const [generationError, setGenerationError] = useState("");
 
-  const handleGenerate = async () => {
+  const handleGenerate = () => {
     setIsGenerating(true);
     setGenerationError("");
     setGenerationResult(null);
@@ -28,63 +28,51 @@ export default function Dashboard() {
     setActiveNode("writer");
 
     const careerProfile = localStorage.getItem('career_profile') || "";
+    
+    // Connect to Render WebSocket backend (use wss:// for production HTTPS)
+    const wsProtocol = window.location.protocol === "https:" ? "wss://" : "ws://";
+    const wsHost = "linkedin-copilot-backend.onrender.com"; // Or localhost:8000 for local dev
+    const ws = new WebSocket(`${wsProtocol}${wsHost}/ws/generate`);
 
-    try {
-      // Connect to FastAPI SSE streaming endpoint
-      const response = await fetch("https://linkedin-copilot-backend.onrender.com/api/generate-stream", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ request, tone, audience, career_profile: careerProfile })
-      });
+    ws.onopen = () => {
+      ws.send(JSON.stringify({ 
+        request, 
+        tone, 
+        audience, 
+        career_profile: careerProfile 
+      }));
+    };
 
-      if (!response.ok) {
-        throw new Error("Failed to connect to backend generation server.");
+    ws.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      
+      if (data.node === "Error") {
+        setGenerationError(data.detail || "Generation failed.");
+        setIsGenerating(false);
+        ws.close();
+        return;
       }
 
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = "";
+      setActiveNode(data.node);
+      setCompletedNodes(prev => new Set([...prev, data.node]));
 
-      while (true) {
-        const { value, done } = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split("\n\n");
-        buffer = lines.pop();
-
-        for (const line of lines) {
-          if (line.startsWith("data: ")) {
-            const data = JSON.parse(line.replace("data: ", ""));
-
-            if (data.node === "DONE") {
-              setIsGenerating(false);
-              setActiveNode(null);
-              break;
-            }
-
-            if (data.node === "Error") {
-              setGenerationError(data.detail || "Generation failed.");
-              setIsGenerating(false);
-              setActiveNode(null);
-              break;
-            }
-
-            // Update node visualizer state
-            setActiveNode(data.node);
-            setCompletedNodes(prev => new Set([...prev, data.node]));
-
-            if (data.draft || data.scorecard) {
-              setGenerationResult(data);
-            }
-          }
+      if (data.draft || data.node === "Final Approval") {
+        setGenerationResult(data);
+        if (data.node === "Final Approval") {
+          setIsGenerating(false);
         }
       }
-    } catch (error) {
-      setGenerationError("Could not connect to the generation service. Make sure Uvicorn is running on port 8000.");
+    };
+
+    ws.onerror = () => {
+      setGenerationError("Could not connect to the WebSocket generation service.");
+      setIsGenerating(false);
+    };
+
+    ws.onclose = () => {
       setIsGenerating(false);
       setActiveNode(null);
-    }
+    };
   };
 
   return (
