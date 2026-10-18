@@ -31,7 +31,7 @@ export default function Dashboard() {
 
     try {
       // Connect to FastAPI SSE streaming endpoint
-      const response = await fetch("http://localhost:8000/api/generate-stream", {
+      const response = await fetch("https://linkedin-copilot-backend.onrender.com/api/generate-stream", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ request, tone, audience, career_profile: careerProfile })
