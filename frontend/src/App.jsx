@@ -22,7 +22,7 @@ export default function App() {
             <button onClick={() => setSidebarOpen(true)} className="lg:hidden text-slate-300 hover:text-white">
               <Menu className="w-6 h-6" />
             </button>
-            <span className="font-bold text-white text-base tracking-tight">LinkedIn Content Copilot</span>
+            <span className="font-bold text-white text-base tracking-tight">VeritasAI · LinkedIn Content Copilot</span>
           </div>
 
           <nav className="flex items-center gap-2">

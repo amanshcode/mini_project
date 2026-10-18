@@ -7,7 +7,7 @@ from typing import Optional, Dict, Any
 
 from project import run_generation
 
-app = FastAPI(title="LinkedIn Content Copilot API")
+app = FastAPI(title="VeritasAI API")
 
 app.add_middleware(
     CORSMiddleware,
