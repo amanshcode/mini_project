@@ -11,7 +11,7 @@ app = FastAPI(title="VeritasAI API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # Or replace "*" with your production Vercel frontend URL later
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
