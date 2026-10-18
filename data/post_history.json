@@ -1,5 +1,46 @@
 [
   {
+    "id": "20261015142934201484",
+    "created_at": "2026-10-15T14:29:34",
+    "request": "Write a LinkedIn post showcasing my Python, machine learning, and LangGraph skills for AI/ML internship recruiters. Do not invent experience or achievements.",
+    "tone": "Professional and authentic",
+    "audience": "General LinkedIn audience",
+    "draft": "I’m a B.Tech student actively deepening my expertise in Python, machine learning, and the emerging LangGraph framework. Over the past months I’ve dedicated myself to mastering core ML concepts—data preprocessing, model selection, and evaluation—through hands‑on coursework and self‑driven experiments. \n\nUsing Python’s ecosystem (NumPy, pandas, scikit‑learn, and PyTorch), I’ve built and tuned several classification and regression models on publicly available datasets, focusing on reproducibility and clean code. More recently, I’ve begun exploring LangGraph, experimenting with its graph‑based approach to orchestrate LLM‑driven workflows and integrate external tools. These early prototypes have helped me understand prompt engineering, context management, and the practical challenges of scaling generative AI pipelines.\n\nI’m eager to apply this growing skill set in a real‑world AI/ML internship, where I can contribute to data‑driven solutions, collaborate with experienced teams, and continue learning from cutting‑edge projects. If you’re looking for a motivated, technically solid intern ready to dive into Python‑centric AI work, I’d welcome a conversation.",
+    "approved": true,
+    "attempts": 1,
+    "scorecard": {
+      "hook": 5,
+      "clarity": 8,
+      "audience_fit": 8,
+      "authenticity": 9,
+      "readability": 8,
+      "structure": 8,
+      "feedback": "Hook could be more attention‑grabbing; otherwise the content is clear, relevant, and well‑structured for LinkedIn recruiters.",
+      "verdict": "APPROVED"
+    },
+    "claim_checks": [
+      {
+        "claim": "I’ve built and tuned several classification and regression models on publicly available datasets, focusing on reproducibility and clean code.",
+        "status": "USER-PROVIDED",
+        "explanation": "Personal achievement stated by the user; not independently verified.",
+        "source_urls": []
+      },
+      {
+        "claim": "I’ve begun exploring LangGraph, experimenting with its graph‑based approach to orchestrate LLM‑driven workflows and integrate external tools.",
+        "status": "USER-PROVIDED",
+        "explanation": "Personal experience described by the user; no external evidence required.",
+        "source_urls": []
+      },
+      {
+        "claim": "Using Python’s ecosystem (NumPy, pandas, scikit‑learn, and PyTorch) I’ve built and tuned several models.",
+        "status": "USER-PROVIDED",
+        "explanation": "User‑provided claim about tool usage; not independently verified.",
+        "source_urls": []
+      }
+    ],
+    "review_feedback": "Strong, authentic post that clearly showcases your Python and ML work while inviting internship opportunities. Consider a punchier opening hook to capture attention immediately."
+  },
+  {
     "id": "20261013230104490177",
     "created_at": "2026-10-13T23:01:04",
     "request": "Write a LinkedIn post showcasing my Python, machine learning, and LangGraph skills for AI/ML internship recruiters. Do not invent experience or achievements.",

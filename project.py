@@ -262,7 +262,7 @@ preserving the user's original intent and supplied facts.
 
 # =========================================================
 
-REVIEWER_PROMPT = """
+REVIEWER_PROMPT = r"""
 
 You are a strict but fair LinkedIn content reviewer and
 
@@ -1716,7 +1716,7 @@ with tab_history:
 
                     height=180,
 
-                    key=f"history\_{item.get('id')}",
+                    key=f"history\\_{item.get('id')}",
 
                 )
 
@@ -1726,11 +1726,11 @@ with tab_history:
 
                     data=item.get("draft", ""),
 
-                    file_name=f"linkedin\_{item.get('id')}.txt",
+                    file_name=f"linkedin\\_{item.get('id')}.txt",
 
                     mime="text/plain",
 
-                    key=f"download\_{item.get('id')}",
+                    key=f"download\\_{item.get('id')}",
 
                 )
 
